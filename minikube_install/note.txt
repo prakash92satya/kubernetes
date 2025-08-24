@@ -1,0 +1,13 @@
+https://jhooq.com/prometheous-k8s-aws-setup/    
+
+ssh -i "key105.pem" ubuntu@ec2-18-212-97-206.compute-1.amazonaws.com
+
+scp -i "key105.pem" -r \Users\SATYA\Downloads\folder ubuntu@ec2-18-212-97-206.compute-1.amazonaws.com:~/ 
+scp -i "key105.pem" -r \Users\SATYA\Downloads\minikube_script ubuntu@ec2-18-212-97-206.compute-1.amazonaws.com:~/
+
+
+eksctl create cluster --name c-1 --region us-east-1 --nodegroup-name worker-nodes 
+--node-type t2.medium --nodes 2 --nodes-min 2 --nodes-max 3
+
+eksctl delete cluster --name c-1 --region us-east-1
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml

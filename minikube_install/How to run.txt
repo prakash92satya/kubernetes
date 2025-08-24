@@ -1,0 +1,8 @@
+1 change ami
+2 instance type
+3 laptop id_rsa.pub and id_rsa
+4 aws access_key and secret_key
+5 ssh ubuntu@172.56.87.90
+6 cd scripts
+7 ./install_scripts.sh
+8 ./ minikube.ssh
