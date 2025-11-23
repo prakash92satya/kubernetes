@@ -17,10 +17,6 @@ sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s
 sudo chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
-# Start Minikube
-echo "5. Starting Minikube..."
-minikube start --driver=docker
-
 # Install Helm
 echo "6. Installing Helm..."
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
@@ -34,3 +30,7 @@ minikube status
 helm version
 
 echo "Installation complete! Minikube and Helm are now installed."
+
+# Start Minikube
+echo "5. Starting Minikube..."
+minikube start --driver=docker
